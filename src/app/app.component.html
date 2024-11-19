@@ -1,0 +1,24 @@
+<router-outlet></router-outlet>
+<!-- <ngx-spinner
+  bdColor="rgba(0,0,0,0.8)"
+  size="medium"
+  color="#ffffff"
+  type="ball-zig-zag"
+  [fullScreen]="true"
+  ><span class="text-danger fw-bold fa-xl">Loading .....</span></ngx-spinner
+> -->
+
+
+
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, .8)"
+  template="<i class='fa-solid fa-heart-pulse fa-beat fa-5x text-white'></i>"
+>
+<span class="text-danger fw-bold fa-xl">Loading .....</span>
+</ngx-spinner>
+
+<div class="animat">
+  <div  role="button" class="topScroll" *ngIf="isShow"  (click)="scrollTop()">
+    <i class="fa-solid fa-angle-up"></i>
+  </div>
+</div>

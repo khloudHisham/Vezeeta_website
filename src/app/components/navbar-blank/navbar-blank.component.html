@@ -1,0 +1,81 @@
+<nav class="navbar navbar-expand-lg bg-main px-4 py-3 fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand position-relative" routerLink='/home'>
+        <i class="fa-solid fa-heart-pulse fa-2xl pe-3 text-white"></i>
+        <span class="fw-bold text-white fa-2xl">Doc<span class="text-info tOfDoctor">T</span><span class="ps-4">or</span><span class="text-info">s</span></span>
+            
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto w-50 d-flex justify-content-center">
+            
+            <li class="nav-item pe-2">
+              <a class="nav-link text-white" role="button" routerLink="/home" routerLinkActive="active-link">Home</a>
+            </li>
+
+            <li class="nav-item pe-2">
+              <a class="nav-link text-white" role="button" routerLink="/specialties" routerLinkActive="active-link">Specialties</a>
+            </li>
+            <li class="nav-item pe-2">
+              <a class="nav-link text-white" role="button" routerLink="/doctors" routerLinkActive="active-link">Doctors</a>
+            </li>
+            <li class="nav-item pe-2">
+              <a class="nav-link text-white" role="button">Coupons</a>
+            </li>
+            <li class="nav-item pe-2">
+              <a class="nav-link text-white" role="button">About</a>
+            </li>
+            
+          </ul>
+        <ul class="navbar-nav ms-auto d-flex align-items-center">
+          
+          <li class="nav-item pe-2" (click)="signOut()">
+            <a class="nav-link text-white fa-xl" role="button" routerLink="/login">SignOut</a>
+          </li>
+
+         
+          <li class="nav-item d-flex gap-3 icons">
+            <a href="https://www.facebook.com/mahmoud.elksass.7/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/mahmoud-ismail-370a76215/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/mahmoudismail2000" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://wa.me/+0201067764726" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
+          </li>
+          <li class="nav-item ms-4 d-flex align-items-center">
+            <div class="dropdown">
+                <a class="nav-link profileUser" role="button" *ngIf="roleOfUser=='Doctor'">
+                  <p-chip styleClass="my-chip" [label]="doctorData.fullName" [image]="'https://localhost:7198/images/'+doctorData.photoPath" alt="Avatar image"></p-chip>
+                </a>
+                <a class="nav-link profileUser" role="button" *ngIf="roleOfUser=='Patient'" [routerLink]="[roleOfUser=='Patient'?'/patientProfile':'/doctorProfile',idOfUser]">
+                  <p-chip styleClass="my-chip" [label]="patientData.details.fullName.slice(0,30)" [image]="patientData.details.photoPath?'https://localhost:7198/images/'+patientData.details.photoPath:'./assets/png-transparent-user-profile-computer-icons-user-interface-mystique-miscellaneous-user-interface-design-smile.png'" alt="Avatar image"></p-chip>
+                </a>
+              
+              <ul class="dropdown-menu" *ngIf="roleOfUser=='Doctor'">
+                <li><a class="dropdown-item" [routerLink]="[roleOfUser=='Doctor'?'/doctorProfile':'/patientProfile',idOfUser]">Bookings</a></li>
+                <li><a class="dropdown-item" [routerLink]="['appointments',idOfUser]">Appointments</a></li>
+                <li><a class="dropdown-item" href="#">Log Out</a></li>
+              </ul>
+            </div>
+            <!-- <a class="nav-link profileUser" role="button" *ngIf="roleOfUser=='Doctor'" [routerLink]="[roleOfUser=='Doctor'?'/doctorProfile':'/patientProfile',idOfUser]">
+              <p-chip styleClass="my-chip" [label]="doctorData.fullName" [image]="'https://localhost:7198/images/'+doctorData.photoPath" alt="Avatar image"></p-chip>
+            </a>
+            <a class="nav-link profileUser" role="button" *ngIf="roleOfUser=='Patient'" [routerLink]="[roleOfUser=='Patient'?'/patientProfile':'/patientProfile',idOfUser]">
+              <p-chip styleClass="my-chip" [label]="patientData.details.fullName.slice(0,30)" [image]="patientData.details.photoPath?'https://localhost:7198/images/'+patientData.details.photoPath:'./assets/png-transparent-user-profile-computer-icons-user-interface-mystique-miscellaneous-user-interface-design-smile.png'" alt="Avatar image"></p-chip>
+            </a> -->
+            <i class="fa-solid fa-caret-down fa-bounce text-white ms-2 dropdown-toggle" *ngIf="roleOfUser=='Doctor'" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+            
+            <!-- <i [class]="roleOfUser=='Doctor'?'fa-solid fa-user-doctor fa-xl':'fa-solid fa-user fa-xl'"></i> -->
+          </li>
+          
+         
+          
+          
+        
+        </ul>
+        
+      </div>
+    </div>
+</nav>
+

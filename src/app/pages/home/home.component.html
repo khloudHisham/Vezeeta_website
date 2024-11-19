@@ -1,0 +1,230 @@
+<section>  
+        <div class="row g-0">
+            <div class="col-md-12 position-relative">
+                <div class="description position-absolute">
+                    <p class="bestSpan">BEST MEDICAL TEMPLATE</p>
+                    <h2 class="fa-4x text-white">Meet The <br> <span class="fw-bold text-danger-emphasis">Best Doctor</span></h2>
+                    <div class="mt-5">
+                        <button class="btn btn-main rounded-0 px-4  me-4 fw-bold rounded-pill">MAKE APPOINTMENT</button>
+                        <button class="btn leanMore rounded-0 px-4  fw-bold rounded-pill">LEARN MORE</button>
+                    </div>
+                </div>
+                    <div class="slider">
+                        <owl-carousel-o [options]="mainSlider">
+                            <ng-template carouselSlide><img src="./assets/bg_1.jpg" class="w-100"  alt=""></ng-template>  
+                            <ng-template carouselSlide><img src="./assets/slider1.jpg" class="w-100" alt=""></ng-template>  
+                            <ng-template carouselSlide><img src="./assets/slider2.png" class="w-100" alt=""></ng-template>  
+                             
+                          </owl-carousel-o>
+                    </div>
+            </div>
+           
+        </div>
+
+        
+
+            <div class="topDoctor py-5 px-md-5">
+                <div class="px-5">
+                    <h2 class="mb-4">Top Doctors</h2>
+                <owl-carousel-o [options]="topDoctorsSlider" class="sliderDoctors">
+
+                    <ng-container *ngFor="let doctor of topDoctors">
+                      <ng-template carouselSlide>
+                        <img [src]="'https://localhost:7198/images/'+doctor.photoPath" height="250" [alt]="doctor.fullName" [title]="doctor.fullName">
+                        <div class="d-flex flex-column align-items-center">
+                            <h6>Dr : <span>{{doctor.fullName}}</span></h6>
+                            <h6><span>{{doctor.specialize}}</span></h6>
+                        </div>
+                      </ng-template>
+                    </ng-container>
+                
+                  </owl-carousel-o>
+                </div>
+            </div>
+            
+            <div class="px-5 bg-body-secondary">
+                <div class="px-md-5 py-5">
+                    <h2>
+                        Popular Searches on Doctors
+                    </h2>
+                    <div class="row mt-4">
+                        <div class="col-md-12 popularTabs">
+                            
+                                <div class="nav nav-tabs borderWidth navButton" id="nav-tab" role="tablist">
+                                  <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Specialties</button>
+                                  <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Conditions</button>
+                                  <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Procedures</button>
+                                 
+                                </div>
+                             
+                              <div class="tab-content mt-5" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+                                    <div class="row ps-4 mb-5">
+                                        <div class="col-md-2 ms-md-4 ms-lg-5">
+                                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                                <div class="bg-main p-3 rounded-circle d-flex justify-content-center align-items-center">
+                                                    <img src="./../../../assets/health-service.png" height="70" class="w-75" alt="Family Medicine">
+                                                    
+                                                </div>
+                                                <span>Family Medicine</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 ms-md-4 ">
+                                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                                <div class="bg-main p-3 rounded-circle d-flex justify-content-center align-items-center">
+                                                    <img src="./../../../assets/bone.png" height="70" class="w-75" alt="Family Medicine">
+                                                    
+                                                </div>
+                                                <span>Orthopedic Surgery</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 mx-md-4">
+                                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                                <div class="bg-main p-3 rounded-circle d-flex justify-content-center align-items-center">
+                                                    <img src="./../../../assets/clean-tooth (1).png" height="70" class="w-75" alt="Family Medicine">
+                                                    
+                                                </div>
+                                                <span>Dentistry</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 me-md-4">
+                                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                                <div class="bg-main p-3 rounded-circle d-flex justify-content-center align-items-center">
+                                                    <img src="./../../../assets/stethoscope.png" height="70" class="w-75" alt="Family Medicine">
+                                                    
+                                                </div>
+                                                <span>Internal Medicine</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                                <div class="bg-main p-3 rounded-circle d-flex justify-content-center align-items-center">
+                                                    <img src="./../../../assets/cardiothoracic.png" height="70" class="w-75" alt="Family Medicine">
+                                                    
+                                                </div>
+                                                <span>Cardiothoracic Surgery</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a routerLink="/specialties" class="viewAll ms-5">View All Specialties <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                                    <div class="row ps-4 mb-5">
+                                        <div class="col-md-2 ms-md-4 ms-lg-5">
+                                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                                <div class="bg-main p-3 rounded-circle d-flex justify-content-center align-items-center">
+                                                    <img src="./../../../assets/cancer.png" height="70" class="w-75" alt="Family Medicine">
+                                                    
+                                                </div>
+                                                <span>Endometriosis</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 ms-md-4 ms-lg-4">
+                                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                                <div class="bg-main p-3 rounded-circle d-flex justify-content-center align-items-center">
+                                                    <img src="./../../../assets/headache.png" height="70" class="w-75" alt="Family Medicine">
+                                                    
+                                                </div>
+                                                <span>ADHD and-or ADD</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 mx-md-4 mx-lg-4">
+                                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                                <div class="bg-main p-3 rounded-circle d-flex justify-content-center align-items-center">
+                                                    <img src="./../../../assets/depression.png" height="70" class="w-75" alt="Family Medicine">
+                                                    
+                                                </div>
+                                                <span>Anxiety</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 me-md-4 me-lg-4">
+                                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                                <div class="bg-main p-3 rounded-circle d-flex justify-content-center align-items-center">
+                                                    <img src="./../../../assets/back.png" height="70" class="w-75" alt="Family Medicine">
+                                                    
+                                                </div>
+                                                <span>Fibromyalgia</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                                <div class="bg-main p-3 rounded-circle d-flex justify-content-center align-items-center">
+                                                    <img src="./../../../assets/stroke.png" height="70" class="w-75" alt="Family Medicine">
+                                                    
+                                                </div>
+                                                <span>Sleep Apnea</span>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+    
+                                </div>
+                                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+                                    <div class="row ps-4 mb-5">
+                                        <div class="col-md-2 ms-md-4 ms-lg-5">
+                                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                                <div class="bg-main p-3 rounded-circle d-flex justify-content-center align-items-center">
+                                                    <img src="./../../../assets/colon-cancer.png" height="70" class="w-75" alt="Family Medicine">
+                                                    
+                                                </div>
+                                                <span>Colonoscopy</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 ms-md-4">
+                                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                                <div class="bg-main p-3 rounded-circle d-flex justify-content-center align-items-center">
+                                                    <img src="./../../../assets/system.png" height="70" class="w-75" alt="Family Medicine">
+                                                    
+                                                </div>
+                                                <span>Hernia Repair</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 mx-md-4">
+                                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                                <div class="bg-main p-3 rounded-circle d-flex justify-content-center align-items-center">
+                                                    <img src="./../../../assets/vasectomy.png" height="70" class="w-75" alt="Family Medicine">
+                                                    
+                                                </div>
+                                                <span>Vasectomy</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 me-4">
+                                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                                <div class="bg-main p-3 rounded-circle d-flex justify-content-center align-items-center">
+                                                    <img src="./../../../assets/injection.png" height="70" class="w-75" alt="Family Medicine">
+                                                    
+                                                </div>
+                                                <span>Knee Replacement</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                                <div class="bg-main p-3 rounded-circle d-flex justify-content-center align-items-center">
+                                                    <img src="./../../../assets/hormone-therapy.png" height="70" class="w-75" alt="Family Medicine">
+                                                    
+                                                </div>
+                                                <span>Hormone Replacement Therapy</span>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+
+            
+
+       
+
+
+   
+    
+  
+  
+</section>
